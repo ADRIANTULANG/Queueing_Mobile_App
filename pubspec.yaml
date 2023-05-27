@@ -1,0 +1,56 @@
+name: queuing_system
+description: A new Flutter project.
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cached_network_image: ^3.2.3
+  cupertino_icons: ^0.1.3
+  # qr_code_scanner: ^0.0.13
+  # cloud_firestore: ^0.14.3
+  # firebase_core : ^0.5.0
+  # firebase_storage: ^5.0.1
+  # firebase_auth:
+  # firebase_messaging:
+  toast: ^0.1.5
+  url_launcher:
+  intl: ^0.17.0
+  image_picker: ^0.8.7
+  path_provider: ^2.0.13
+  http: ^0.13.5
+  get_storage: ^2.1.1
+  qr_code_scanner: ^1.0.1
+  qr_flutter: ^4.0.0
+  firebase_core: ^2.7.1
+  firebase_messaging: ^14.2.6
+  awesome_notifications: ^0.7.4+1
+  
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family:  CustomIcons
+      fonts:
+        - asset: assets/icons/customIcons.ttf
+  
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+        - asset: assets/fonts/Lato-Bold.ttf
+  assets:
+    - assets/
+         
