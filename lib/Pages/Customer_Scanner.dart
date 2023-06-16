@@ -50,7 +50,7 @@ class _CustomerScannerState extends State<CustomerScanner> {
         'purpose': reasons,
         'customerid': box.read('id').toString()
       });
-
+      print("resulta: ${response.body}");
       if (response.statusCode == 200) {
         // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         //   content: const Text('Success!'),
@@ -67,6 +67,7 @@ class _CustomerScannerState extends State<CustomerScanner> {
 
   check_if_there_is_pending_transaction(
       {@required String type, @required String reason}) async {
+    print("age dre?");
     try {
       String api = '';
       if (type == "cashier") {
@@ -77,6 +78,9 @@ class _CustomerScannerState extends State<CustomerScanner> {
       var url = Uri.parse("${AppEndpoint.endPointDomain}/$api");
       var response =
           await http.post(url, body: {'customerid': box.read('id').toString()});
+
+      print("resulta: ${response.body}");
+
       if (response.statusCode == 200) {
         List data = jsonDecode(response.body)['data'];
         if (data.length == 0 || data.isEmpty) {

@@ -67,6 +67,24 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  sample() async {
+    try {
+      var url = Uri.parse("${AppEndpoint.endPointDomain}/sample.php");
+      var response = await http.post(
+        url,
+      );
+      print(response.request);
+      print(response.statusCode);
+      print(response.body);
+      if (response.statusCode == 200) {
+      } else {}
+    } on Exception catch (e) {
+      Toast.show("Something is wrong check internet connection", context,
+          duration: 3, gravity: Toast.TOP);
+      print(e);
+    }
+  }
+
   updateUserToken(String id) async {
     await http.post(Uri.parse("${AppEndpoint.endPointDomain}/update-token.php"),
         body: {'fcmToken': box.read('fcmToken'), 'id': id});
@@ -135,6 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                             Toast.show("Invalid username or password", context,
                                 duration: 3, gravity: Toast.TOP);
                           } else {
+                            // sample();
                             login(
                                 username: username_controller.text,
                                 password: password_controller.text);
